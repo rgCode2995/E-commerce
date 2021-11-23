@@ -1,0 +1,41 @@
+import './App.css';
+import Home from './Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Checkout from './pages/Checkout'
+import Login from './pages/Login';
+import Register from './pages/Register'
+import MenShoes from './components/Shoes/MenShoes';
+import WomenShoes from './components/Shoes/WomenShoes';
+import Kids from './components/Shoes/Kids';
+import ProductDetails from './components/ProductDetails';
+import Me from './components/Shoes/Me';
+import MenShoes1 from './components/Shoes/MenShoes1';
+import CartScreen from './pages/CartScreen';
+
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        <div className="App">
+          <Switch>
+
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/shoes/men" component={MenShoes} />
+            <Route exact path="/shoes/women" component={WomenShoes} />
+            <Route exact path="/shoes/kids" component={Kids} />
+            <Route exact path="/products" component={MenShoes1} />
+            <Route exact path="/products/:id" component={ProductDetails} />
+            {/* <Route exact path="/checkout" component={Checkout} /> */}
+            <Route exact path="/cart/:id?" component={CartScreen} />
+          </Switch>
+        </div>
+      </Router >
+    </div >
+  );
+}
+
+export default App;
